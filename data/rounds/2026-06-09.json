@@ -11,8 +11,8 @@
       "category": "ai",
       "launched_at": "2026-06-08T22:10:18Z",
       "outcome": "ship",
-      "final_points": 62,
-      "editorial": "Made the front page. 62 points by the next morning."
+      "final_points": 64,
+      "editorial": "Made the front page. 64 points by the next morning."
     },
     {
       "id": "48453978",
@@ -61,6 +61,48 @@
       "outcome": "skip",
       "final_points": 3,
       "editorial": "Sank without a ripple — 3 points."
+    },
+    {
+      "id": "ph-1158759",
+      "source": "ph",
+      "title": "Honen",
+      "tagline": "Automated teaching + learning infrastructure for any company",
+      "url": "https://www.producthunt.com/r/KGWER5KAKVLXHX?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Called+It+%28ID%3A+287610%29",
+      "host": "producthunt.com",
+      "category": "other",
+      "launched_at": "2026-06-08T07:01:00Z",
+      "outcome": "ship",
+      "final_points": 515,
+      "peak_rank": 1,
+      "editorial": "#1 on Product Hunt that day — 515 votes."
+    },
+    {
+      "id": "ph-1159379",
+      "source": "ph",
+      "title": "The Incident Challenge",
+      "tagline": "The Engineering Challenge for the AI age",
+      "url": "https://www.producthunt.com/r/EE5VAUH62FBSUJ?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Called+It+%28ID%3A+287610%29",
+      "host": "producthunt.com",
+      "category": "ai",
+      "launched_at": "2026-06-08T07:01:00Z",
+      "outcome": "skip",
+      "final_points": 36,
+      "peak_rank": 11,
+      "editorial": "Finished #11 with 36 votes. The podium was never close."
+    },
+    {
+      "id": "ph-1166263",
+      "source": "ph",
+      "title": "Financial Data API",
+      "tagline": "A free finance API with 25+ sources",
+      "url": "https://www.producthunt.com/r/EBNOSZRHI2IJAV?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Called+It+%28ID%3A+287610%29",
+      "host": "producthunt.com",
+      "category": "devtools",
+      "launched_at": "2026-06-08T07:01:00Z",
+      "outcome": "skip",
+      "final_points": 25,
+      "peak_rank": 15,
+      "editorial": "Finished #15 with 25 votes. The podium was never close."
     }
   ]
 }

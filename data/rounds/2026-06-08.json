@@ -61,6 +61,48 @@
       "outcome": "skip",
       "final_points": 3,
       "editorial": "Sank without a ripple — 3 points."
+    },
+    {
+      "id": "ph-1162631",
+      "source": "ph",
+      "title": "Dreambeans by Google Labs",
+      "tagline": "Daily AI stories personalised from your Google apps",
+      "url": "https://www.producthunt.com/r/JQLUSYPX7QVIND?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Called+It+%28ID%3A+287610%29",
+      "host": "producthunt.com",
+      "category": "ai",
+      "launched_at": "2026-06-07T07:01:00Z",
+      "outcome": "ship",
+      "final_points": 375,
+      "peak_rank": 1,
+      "editorial": "#1 on Product Hunt that day — 375 votes."
+    },
+    {
+      "id": "ph-1163183",
+      "source": "ph",
+      "title": "WAR MODE",
+      "tagline": "Turn habits into missions. Discipline over motivation.",
+      "url": "https://www.producthunt.com/r/GXYD6VGI5NCDLT?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Called+It+%28ID%3A+287610%29",
+      "host": "producthunt.com",
+      "category": "other",
+      "launched_at": "2026-06-07T07:01:00Z",
+      "outcome": "skip",
+      "final_points": 18,
+      "peak_rank": 13,
+      "editorial": "Finished #13 with 18 votes. The podium was never close."
+    },
+    {
+      "id": "ph-1165039",
+      "source": "ph",
+      "title": "FactGuard",
+      "tagline": "Real-time AI fact-checking to fight fake news 🛡️",
+      "url": "https://www.producthunt.com/r/Z6N3ESNGX46VMA?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Called+It+%28ID%3A+287610%29",
+      "host": "producthunt.com",
+      "category": "ai",
+      "launched_at": "2026-06-07T07:01:00Z",
+      "outcome": "skip",
+      "final_points": 16,
+      "peak_rank": 15,
+      "editorial": "Finished #15 with 16 votes. The podium was never close."
     }
   ]
 }

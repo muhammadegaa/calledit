@@ -4,6 +4,7 @@ export type OpenLaunch = {
   id: string;
   source: "hn" | "ph";
   title: string;
+  tagline?: string;
   url: string;
   host: string;
   category: string;
@@ -14,6 +15,7 @@ export type OpenLaunch = {
 export type ResolvedLaunch = OpenLaunch & {
   outcome: Call;
   final_points: number;
+  peak_rank?: number;
   editorial: string;
 };
 
@@ -22,7 +24,13 @@ export type Round<L> = {
   status: "open" | "resolved";
   resolves_at?: string;
   launches: L[];
+  bot_calls?: Record<string, Call>;
 };
+
+export const SOURCE_META = {
+  hn: { badge: "Show HN", color: "#ff6600", shipLabel: "front page in 24h", skipLabel: "sinks quietly" },
+  ph: { badge: "Product Hunt", color: "#ff6154", shipLabel: "top 5 by day's end", skipLabel: "stays off the podium" },
+} as const;
 
 // Asymmetric scoring: ships are rare (~6-20% of a round), so calling one
 // correctly is worth triple a safe skip. Wrong calls score zero, not negative —

@@ -4,59 +4,98 @@
   "resolves_at": "2026-06-10T02:00:00Z",
   "launches": [
     {
-      "id": "48469352",
+      "id": "48473845",
       "source": "hn",
-      "title": "The agent that builds and operates its own SaaS tools",
-      "url": "https://craftbot.live",
-      "host": "craftbot.live",
-      "category": "ai",
-      "launched_at": "2026-06-09T23:44:41Z",
-      "points_at_pick": 10,
-      "age_h_at_pick": 9
-    },
-    {
-      "id": "48469533",
-      "source": "hn",
-      "title": "Crxray – Git clone but for Chrome extension source code",
-      "url": "https://github.com/collinboler/crxray",
-      "host": "github.com",
-      "category": "other",
-      "launched_at": "2026-06-10T00:09:43Z",
-      "points_at_pick": 4,
-      "age_h_at_pick": 8
-    },
-    {
-      "id": "48471028",
-      "source": "hn",
-      "title": "This Week in Obsidian – Obsidian Newsletter Published Every Tuesday",
-      "url": "https://thisweekinobsidian.substack.com/p/this-week-in-obsidian-25",
-      "host": "thisweekinobsidian.substack.com",
-      "category": "other",
-      "launched_at": "2026-06-10T03:24:52Z",
-      "points_at_pick": 3,
-      "age_h_at_pick": 5
-    },
-    {
-      "id": "48472271",
-      "source": "hn",
-      "title": "RAG built for Frappe using TurboVec",
-      "url": "https://github.com/ssenthilnathan3/turbo_rag",
+      "title": "macOS menu bar gauges for your Claude Code quota",
+      "url": "https://github.com/grzegorz-raczek-unit8/claude-quota",
       "host": "github.com",
       "category": "ai",
-      "launched_at": "2026-06-10T06:30:49Z",
-      "points_at_pick": 1,
-      "age_h_at_pick": 2
+      "launched_at": "2026-06-10T09:43:16Z",
+      "age_h_at_pick": 2,
+      "points_at_pick": 7
     },
     {
-      "id": "48471805",
+      "id": "48473221",
       "source": "hn",
-      "title": "Artie – Real-time data replication to your warehouse, now self-serve",
-      "url": "https://www.artie.com",
-      "host": "artie.com",
+      "title": "OpenClaw and Hermes Agent call each other via XMPP",
+      "url": "https://github.com/ai-sns/openclaw-hermes-agent-network",
+      "host": "github.com",
+      "category": "ai",
+      "launched_at": "2026-06-10T08:30:11Z",
+      "age_h_at_pick": 3,
+      "points_at_pick": 5
+    },
+    {
+      "id": "48472991",
+      "source": "hn",
+      "title": "Loom, an open-source delivery harness for coding agents",
+      "url": "https://github.com/valkor-ai/loom",
+      "host": "github.com",
+      "category": "devtools",
+      "launched_at": "2026-06-10T07:57:17Z",
+      "age_h_at_pick": 4,
+      "points_at_pick": 3
+    },
+    {
+      "id": "48473739",
+      "source": "hn",
+      "title": "Plug and AI – Slack bot for the whole team, not per-seat",
+      "url": "https://plugand.ai/",
+      "host": "plugand.ai",
+      "category": "ai",
+      "launched_at": "2026-06-10T09:29:29Z",
+      "age_h_at_pick": 2,
+      "points_at_pick": 1
+    },
+    {
+      "id": "48473696",
+      "source": "hn",
+      "title": "Tapflow – self-hosted iOS/Android simulator streaming for mobile QA",
+      "url": "https://github.com/jo-duchan/tapflow",
+      "host": "github.com",
       "category": "other",
-      "launched_at": "2026-06-10T05:27:31Z",
-      "points_at_pick": 2,
-      "age_h_at_pick": 3
+      "launched_at": "2026-06-10T09:24:06Z",
+      "age_h_at_pick": 2,
+      "points_at_pick": 3
+    },
+    {
+      "id": "ph-1152641",
+      "source": "ph",
+      "title": "Publora",
+      "tagline": "The Publishing API for the Agent Era.",
+      "url": "https://www.producthunt.com/r/FFFDHH6IKSRQWU?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Called+It+%28ID%3A+287610%29",
+      "host": "producthunt.com",
+      "category": "ai",
+      "launched_at": "2026-06-10T07:01:00Z",
+      "age_h_at_pick": 5,
+      "rank_at_pick": 1,
+      "votes_at_pick": 195
+    },
+    {
+      "id": "ph-1168019",
+      "source": "ph",
+      "title": "Hero Studio Photos",
+      "tagline": "Snap one photo, get listing-ready shots from every angle",
+      "url": "https://www.producthunt.com/r/VNMX7USPKQFIDY?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Called+It+%28ID%3A+287610%29",
+      "host": "producthunt.com",
+      "category": "consumer",
+      "launched_at": "2026-06-10T07:01:00Z",
+      "age_h_at_pick": 5,
+      "rank_at_pick": 13,
+      "votes_at_pick": 89
+    },
+    {
+      "id": "ph-1167872",
+      "source": "ph",
+      "title": "Zingle",
+      "tagline": "Learn words in context with AI",
+      "url": "https://www.producthunt.com/r/HQ77H6POHIZXEF?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Called+It+%28ID%3A+287610%29",
+      "host": "producthunt.com",
+      "category": "ai",
+      "launched_at": "2026-06-10T07:01:00Z",
+      "age_h_at_pick": 5,
+      "rank_at_pick": 17,
+      "votes_at_pick": 85
     }
   ]
 }

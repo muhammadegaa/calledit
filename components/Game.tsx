@@ -2,8 +2,8 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
-  CATEGORY_LABELS, POINTS, loadState, saveState, scoreReveal, streakDays,
-  overallAccuracy, type Call, type GameState, type OpenLaunch,
+  CATEGORY_LABELS, POINTS, SOURCE_META, loadState, saveState, scoreReveal,
+  streakDays, overallAccuracy, type Call, type GameState, type OpenLaunch,
   type ResolvedLaunch, type Round,
 } from "@/lib/game";
 
@@ -49,10 +49,10 @@ export function Game({
         <section className="mt-8 text-center card-enter">
           <p className="label">Today&apos;s round · {today.date}</p>
           <h1 className="mt-3 text-[26px] font-black leading-tight tracking-tight">
-            5 launches went live this morning.<br />Which ones make the front page?
+            {today.launches.length} launches are live right now.<br />Can you read them?
           </h1>
           <p className="mt-2 text-[13.5px] text-ink-dim">
-            Real Show HN launches, hours old. Call each one — reality scores you tomorrow 09:00.
+            Fresh Show HN posts + today&apos;s Product Hunt board, votes hidden. Call each one — reality scores you tomorrow 09:00.
           </p>
           <button
             onClick={() => setPhase("judging")}
@@ -131,7 +131,9 @@ function RevealStrip({ round, state }: { round: Round<ResolvedLaunch>; state: Ga
                     l.outcome === "ship" ? "bg-ship text-black" : "bg-surface-2 text-ink-dim"
                   }`}
                 >
-                  {l.outcome === "ship" ? `shipped · ${l.final_points}pt` : `${l.final_points}pt`}
+                  {l.source === "ph"
+                    ? l.outcome === "ship" ? `top 5 · #${l.peak_rank}` : `#${l.peak_rank}`
+                    : l.outcome === "ship" ? `shipped · ${l.final_points}pt` : `${l.final_points}pt`}
                 </span>
               </div>
             </div>
@@ -142,7 +144,7 @@ function RevealStrip({ round, state }: { round: Round<ResolvedLaunch>; state: Ga
         <p className="mt-3 text-[12px] text-ink-faint">
           {ships.length === 0
             ? "Nobody made the front page yesterday. Would you have called it?"
-            : `${ships.length} of 5 shipped. Would you have called ${ships.length === 1 ? "it" : "them"}?`}
+            : `${ships.length} of ${round.launches.length} shipped. Would you have called ${ships.length === 1 ? "it" : "them"}?`}
         </p>
       )}
     </section>
@@ -180,8 +182,12 @@ function JudgeCard({
 
       <div className="mt-4 overflow-hidden rounded-xl bg-white text-zinc-900">
         <div className="flex items-center justify-between border-b border-zinc-200 px-4 py-2">
-          <span className="rounded bg-[#ff6600] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white">Show HN</span>
-          <span className="font-mono text-[11px] text-zinc-400">{launch.age_h_at_pick}h old at pick · {CATEGORY_LABELS[launch.category]}</span>
+          <span className="rounded px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white" style={{ backgroundColor: SOURCE_META[launch.source].color }}>
+            {SOURCE_META[launch.source].badge}
+          </span>
+          <span className="font-mono text-[11px] text-zinc-400">
+            {launch.source === "hn" ? `${launch.age_h_at_pick}h old at pick` : "on today's board"} · {CATEGORY_LABELS[launch.category]}
+          </span>
         </div>
         {shotOk && (
           // eslint-disable-next-line @next/next/no-img-element
@@ -189,6 +195,7 @@ function JudgeCard({
         )}
         <div className="px-5 py-4">
           <h2 className="text-[18px] font-bold leading-snug">{launch.title}</h2>
+          {launch.tagline && <p className="mt-0.5 text-[13.5px] text-zinc-600">{launch.tagline}</p>}
           <p className="mt-1 text-[13px] text-zinc-500">
             {launch.host} ·{" "}
             <a href={launch.url} target="_blank" rel="noreferrer" className="underline">open the real site ↗</a>
@@ -198,13 +205,25 @@ function JudgeCard({
 
       <div className="mt-4 grid grid-cols-2 gap-3">
         <button onClick={() => onCall(launch, "ship")} className="rounded-xl bg-ship py-4 text-[19px] font-black tracking-tight text-black">
-          SHIP ▲<div className="mt-0.5 text-[11px] font-medium opacity-70">front page in 24h · +{POINTS.ship} if right</div>
+          SHIP ▲<div className="mt-0.5 text-[11px] font-medium opacity-70">{SOURCE_META[launch.source].shipLabel} · +{POINTS.ship} if right</div>
         </button>
         <button onClick={() => onCall(launch, "skip")} className="rounded-xl bg-surface-2 py-4 text-[19px] font-black tracking-tight text-ink-dim">
-          SKIP ▼<div className="mt-0.5 text-[11px] font-medium opacity-60">sinks quietly · +{POINTS.skip} if right</div>
+          SKIP ▼<div className="mt-0.5 text-[11px] font-medium opacity-60">{SOURCE_META[launch.source].skipLabel} · +{POINTS.skip} if right</div>
         </button>
       </div>
     </section>
+  );
+}
+
+function BotLine({ today, calls }: { today: Round<OpenLaunch>; calls: Record<string, Call> }) {
+  const bot = today.bot_calls!;
+  const disagree = today.launches.filter((l) => bot[l.id] && calls[l.id] && bot[l.id] !== calls[l.id]);
+  return (
+    <p className="mt-3 text-[13px]" style={{ color: "#818cf8" }}>
+      {disagree.length === 0
+        ? "The bot made the exact same calls. Tomorrow tells you nothing about each other."
+        : `The bot disagrees with you on ${disagree.length} ${disagree.length === 1 ? "call" : "calls"}${disagree.length <= 2 ? ` (${disagree.map((l) => l.title.split(/[–—-]/)[0].trim()).join(", ")})` : ""} — tomorrow shows who read it right.`}
+    </p>
   );
 }
 
@@ -228,6 +247,7 @@ function LockedPanel({ state, today }: { state: GameState; today: Round<OpenLaun
         {shipCount === 0 ? "You skipped the whole field." : `You shipped ${shipCount} of ${today.launches.length}.`}
       </h2>
       <p className="mt-2 text-[14px] text-ink-dim">Reality scores you tomorrow at 09:00. Come back for the reveal.</p>
+      {today.bot_calls && <BotLine today={today} calls={calls} />}
 
       <div className="mx-auto mt-6 max-w-sm rounded-xl border border-edge bg-surface p-5 text-left">
         <p className="label">Your calibration</p>

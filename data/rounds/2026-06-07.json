@@ -61,6 +61,48 @@
       "outcome": "skip",
       "final_points": 2,
       "editorial": "Sank without a ripple — 2 points."
+    },
+    {
+      "id": "ph-1163727",
+      "source": "ph",
+      "title": "Google Search Profiles",
+      "tagline": "Profile for publishers/creators to highlight work on Search",
+      "url": "https://www.producthunt.com/r/NRRQD6MLVCJ2A7?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Called+It+%28ID%3A+287610%29",
+      "host": "producthunt.com",
+      "category": "other",
+      "launched_at": "2026-06-06T07:01:00Z",
+      "outcome": "ship",
+      "final_points": 393,
+      "peak_rank": 1,
+      "editorial": "#1 on Product Hunt that day — 393 votes."
+    },
+    {
+      "id": "ph-1161491",
+      "source": "ph",
+      "title": "WOPA",
+      "tagline": "Invoicing for tradespeople, right inside WhatsApp.",
+      "url": "https://www.producthunt.com/r/L5F22EET6GYBAG?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Called+It+%28ID%3A+287610%29",
+      "host": "producthunt.com",
+      "category": "other",
+      "launched_at": "2026-06-06T07:01:00Z",
+      "outcome": "skip",
+      "final_points": 15,
+      "peak_rank": 13,
+      "editorial": "Finished #13 with 15 votes. The podium was never close."
+    },
+    {
+      "id": "ph-1162736",
+      "source": "ph",
+      "title": "QuietDash",
+      "tagline": "Your day on a calm e-ink screen, not your phone",
+      "url": "https://www.producthunt.com/r/HVEMPNDR5EF2YZ?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Called+It+%28ID%3A+287610%29",
+      "host": "producthunt.com",
+      "category": "other",
+      "launched_at": "2026-06-06T07:01:00Z",
+      "outcome": "skip",
+      "final_points": 13,
+      "peak_rank": 15,
+      "editorial": "Finished #15 with 13 votes. The podium was never close."
     }
   ]
 }
