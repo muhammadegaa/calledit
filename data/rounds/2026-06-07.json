@@ -11,8 +11,8 @@
       "category": "other",
       "launched_at": "2026-06-06T18:09:59Z",
       "outcome": "ship",
-      "final_points": 42,
-      "editorial": "Made the front page. 42 points by the next morning."
+      "final_points": 43,
+      "editorial": "Made the front page. 43 points by the next morning."
     },
     {
       "id": "48430113",
@@ -91,13 +91,13 @@
       "editorial": "Finished #13 with 15 votes. The podium was never close."
     },
     {
-      "id": "ph-1162736",
+      "id": "ph-1164760",
       "source": "ph",
-      "title": "QuietDash",
-      "tagline": "Your day on a calm e-ink screen, not your phone",
-      "url": "https://quietdash.com/",
-      "host": "quietdash.com",
-      "category": "other",
+      "title": "Jda Programming Language",
+      "tagline": "opensource compiler ai faster",
+      "url": "https://jdalang.org/",
+      "host": "jdalang.org",
+      "category": "ai",
       "launched_at": "2026-06-06T07:01:00Z",
       "outcome": "skip",
       "final_points": 13,

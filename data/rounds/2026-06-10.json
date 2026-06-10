@@ -12,7 +12,18 @@
       "category": "ai",
       "launched_at": "2026-06-10T09:43:16Z",
       "age_h_at_pick": 6,
-      "points_at_pick": 43
+      "points_at_pick": 45
+    },
+    {
+      "id": "48475992",
+      "source": "hn",
+      "title": "I generated 235 system docs in a day using GPT-5.5",
+      "url": "https://www.paxerp.com/docs",
+      "host": "paxerp.com",
+      "category": "ai",
+      "launched_at": "2026-06-10T13:26:38Z",
+      "age_h_at_pick": 2,
+      "points_at_pick": 4
     },
     {
       "id": "48473696",
@@ -26,6 +37,17 @@
       "points_at_pick": 4
     },
     {
+      "id": "48474188",
+      "source": "hn",
+      "title": "A tool to analyze and manage sosreports",
+      "url": "https://sos-vault.com/login",
+      "host": "sos-vault.com",
+      "category": "other",
+      "launched_at": "2026-06-10T10:27:32Z",
+      "age_h_at_pick": 5,
+      "points_at_pick": 1
+    },
+    {
       "id": "48473221",
       "source": "hn",
       "title": "OpenClaw and Hermes Agent call each other via XMPP",
@@ -35,28 +57,6 @@
       "launched_at": "2026-06-10T08:30:11Z",
       "age_h_at_pick": 7,
       "points_at_pick": 5
-    },
-    {
-      "id": "48475518",
-      "source": "hn",
-      "title": "Time Progress Bar in macOS menu bar",
-      "url": "https://timegauge.minilabs.cc/",
-      "host": "timegauge.minilabs.cc",
-      "category": "other",
-      "launched_at": "2026-06-10T12:48:47Z",
-      "age_h_at_pick": 2,
-      "points_at_pick": 1
-    },
-    {
-      "id": "48475807",
-      "source": "hn",
-      "title": "Employment contract analysis for Ontario's Workforce",
-      "url": "https://basalaw.vercel.app",
-      "host": "basalaw.vercel.app",
-      "category": "other",
-      "launched_at": "2026-06-10T13:13:33Z",
-      "age_h_at_pick": 2,
-      "points_at_pick": 3
     },
     {
       "id": "ph-1152641",
@@ -69,7 +69,7 @@
       "launched_at": "2026-06-10T07:01:00Z",
       "age_h_at_pick": 8,
       "rank_at_pick": 1,
-      "votes_at_pick": 330
+      "votes_at_pick": 337
     },
     {
       "id": "ph-1156179",
@@ -95,7 +95,17 @@
       "launched_at": "2026-06-10T07:01:00Z",
       "age_h_at_pick": 8,
       "rank_at_pick": 17,
-      "votes_at_pick": 91
+      "votes_at_pick": 93
     }
-  ]
+  ],
+  "bot_calls": {
+    "48473221": "skip",
+    "48473696": "skip",
+    "48473845": "ship",
+    "48474188": "skip",
+    "48475992": "skip",
+    "ph-1152641": "skip",
+    "ph-1156179": "skip",
+    "ph-1167872": "skip"
+  }
 }
