@@ -1,0 +1,66 @@
+{
+  "date": "2026-06-09",
+  "status": "resolved",
+  "launches": [
+    {
+      "id": "48453002",
+      "source": "hn",
+      "title": "Command Center, the AI coding env for people who care about quality",
+      "url": "https://www.cc.dev/",
+      "host": "cc.dev",
+      "category": "ai",
+      "launched_at": "2026-06-08T22:10:18Z",
+      "outcome": "ship",
+      "final_points": 62,
+      "editorial": "Made the front page. 62 points by the next morning."
+    },
+    {
+      "id": "48453978",
+      "source": "hn",
+      "title": "I recreated AOL Instant Messenger in the browser",
+      "url": "https://www.webaim.xyz",
+      "host": "webaim.xyz",
+      "category": "other",
+      "launched_at": "2026-06-08T23:38:10Z",
+      "outcome": "skip",
+      "final_points": 5,
+      "editorial": "A respectable 5 points, but the front page never came."
+    },
+    {
+      "id": "48448452",
+      "source": "hn",
+      "title": "A 15-minute backup audit framework for self-hosted homelabs",
+      "url": "https://scholar.0xpi.com/blog/homelab-backup-audit-checklist",
+      "host": "scholar.0xpi.com",
+      "category": "devtools",
+      "launched_at": "2026-06-08T17:38:13Z",
+      "outcome": "skip",
+      "final_points": 2,
+      "editorial": "Sank without a ripple — 2 points."
+    },
+    {
+      "id": "48449489",
+      "source": "hn",
+      "title": "Stop returning raw JSON from MCP servers, build rich inline UIs",
+      "url": "https://medium.com/towards-artificial-intelligence/mcp-apps-build-interactive-apps-directly-inside-your-ai-agents-chat-c571678099e3",
+      "host": "medium.com",
+      "category": "ai",
+      "launched_at": "2026-06-08T18:37:47Z",
+      "outcome": "skip",
+      "final_points": 2,
+      "editorial": "Sank without a ripple — 2 points."
+    },
+    {
+      "id": "48453600",
+      "source": "hn",
+      "title": "Sudo Report – Drudge closne for AI/tech/product",
+      "url": "https://wwe.sudoreport.com",
+      "host": "wwe.sudoreport.com",
+      "category": "ai",
+      "launched_at": "2026-06-08T22:57:33Z",
+      "outcome": "skip",
+      "final_points": 3,
+      "editorial": "Sank without a ripple — 3 points."
+    }
+  ]
+}

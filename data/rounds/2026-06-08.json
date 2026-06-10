@@ -1,0 +1,66 @@
+{
+  "date": "2026-06-08",
+  "status": "resolved",
+  "launches": [
+    {
+      "id": "48437243",
+      "source": "hn",
+      "title": "Axiomax – Cryptographic proof of AI inference carbon footprint",
+      "url": "https://axiomaxllc.com",
+      "host": "axiomaxllc.com",
+      "category": "ai",
+      "launched_at": "2026-06-07T18:09:46Z",
+      "outcome": "skip",
+      "final_points": 2,
+      "editorial": "Sank without a ripple — 2 points."
+    },
+    {
+      "id": "48438180",
+      "source": "hn",
+      "title": "Nightwatch, The open-source, read-only AI SRE",
+      "url": "https://github.com/ninoxAI/nightwatch",
+      "host": "github.com",
+      "category": "ai",
+      "launched_at": "2026-06-07T20:24:36Z",
+      "outcome": "skip",
+      "final_points": 33,
+      "editorial": "A respectable 33 points, but the front page never came."
+    },
+    {
+      "id": "48439894",
+      "source": "hn",
+      "title": "An mkv player that uses WASM to render you videos",
+      "url": "https://parallax.kinosoft.moe/",
+      "host": "parallax.kinosoft.moe",
+      "category": "other",
+      "launched_at": "2026-06-07T23:57:52Z",
+      "outcome": "skip",
+      "final_points": 4,
+      "editorial": "Sank without a ripple — 4 points."
+    },
+    {
+      "id": "48438006",
+      "source": "hn",
+      "title": "A List of AI Neolabs",
+      "url": "https://neolabs-7o2.pages.dev/",
+      "host": "neolabs-7o2.pages.dev",
+      "category": "ai",
+      "launched_at": "2026-06-07T20:01:03Z",
+      "outcome": "skip",
+      "final_points": 3,
+      "editorial": "Sank without a ripple — 3 points."
+    },
+    {
+      "id": "48438904",
+      "source": "hn",
+      "title": "VPets.net – a cozy pixel pet world",
+      "url": "https://vpets.net/start",
+      "host": "vpets.net",
+      "category": "other",
+      "launched_at": "2026-06-07T21:46:23Z",
+      "outcome": "skip",
+      "final_points": 3,
+      "editorial": "Sank without a ripple — 3 points."
+    }
+  ]
+}

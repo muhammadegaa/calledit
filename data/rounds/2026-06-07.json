@@ -1,0 +1,66 @@
+{
+  "date": "2026-06-07",
+  "status": "resolved",
+  "launches": [
+    {
+      "id": "48427217",
+      "source": "hn",
+      "title": "Markdown Notes with Chat and Mail",
+      "url": "https://github.com/ThGSoft/NotesPro",
+      "host": "github.com",
+      "category": "other",
+      "launched_at": "2026-06-06T17:43:44Z",
+      "outcome": "skip",
+      "final_points": 2,
+      "editorial": "Sank without a ripple — 2 points."
+    },
+    {
+      "id": "48428732",
+      "source": "hn",
+      "title": "Typedframes – Pandas/polars column name checking at lint time",
+      "url": "https://github.com/w-martin/typedframes",
+      "host": "github.com",
+      "category": "other",
+      "launched_at": "2026-06-06T20:32:20Z",
+      "outcome": "skip",
+      "final_points": 3,
+      "editorial": "Sank without a ripple — 3 points."
+    },
+    {
+      "id": "48430113",
+      "source": "hn",
+      "title": "VaultSQL – Open-Source Zero-Trust SQL Workbench",
+      "url": "https://vaultsql.com/",
+      "host": "vaultsql.com",
+      "category": "devtools",
+      "launched_at": "2026-06-06T23:24:59Z",
+      "outcome": "skip",
+      "final_points": 8,
+      "editorial": "A respectable 8 points, but the front page never came."
+    },
+    {
+      "id": "48429618",
+      "source": "hn",
+      "title": "An iOS bubble level designed to calibrate away camera bump",
+      "url": "https://apps.apple.com/us/app/bubble-level-calibrated/id6767735397",
+      "host": "apps.apple.com",
+      "category": "other",
+      "launched_at": "2026-06-06T22:24:05Z",
+      "outcome": "skip",
+      "final_points": 4,
+      "editorial": "Sank without a ripple — 4 points."
+    },
+    {
+      "id": "48428005",
+      "source": "hn",
+      "title": "CCC: One place to manage all your Claude, Codex, Antigravity sessions",
+      "url": "https://github.com/amirfish1/claude-command-center",
+      "host": "github.com",
+      "category": "ai",
+      "launched_at": "2026-06-06T19:15:48Z",
+      "outcome": "skip",
+      "final_points": 2,
+      "editorial": "Sank without a ripple — 2 points."
+    }
+  ]
+}

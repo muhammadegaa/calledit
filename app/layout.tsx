@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "The Comment Section — see your launch before you launch",
+  title: "Called It — can you read a launch?",
   description:
-    "Paste your URL and watch your launch day happen before it happens: simulated Hacker News, Product Hunt, Reddit and X reactions, plus the fix list to ship before the real thing.",
+    "A daily prediction game on real launches. Judge today's Show HN and Product Hunt launches in 30 seconds each — reality scores you within 24 hours.",
 };
 
 export default function RootLayout({
