@@ -59,6 +59,17 @@ export type GameState = {
 
 const KEY = "calledit:v1";
 
+export function getAnonId(): string {
+  let id = localStorage.getItem("calledit:anon");
+  if (!id) {
+    id = crypto.randomUUID();
+    localStorage.setItem("calledit:anon", id);
+  }
+  return id;
+}
+
+export type Crowd = Record<string, { ships: number; total: number }>;
+
 export function loadState(): GameState {
   if (typeof window === "undefined") return { days: {}, cat: {} };
   try {

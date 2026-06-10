@@ -2,10 +2,25 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
-  CATEGORY_LABELS, POINTS, SOURCE_META, loadState, saveState, scoreReveal,
-  streakDays, overallAccuracy, type Call, type GameState, type OpenLaunch,
-  type ResolvedLaunch, type Round,
+  CATEGORY_LABELS, POINTS, SOURCE_META, getAnonId, loadState, saveState,
+  scoreReveal, streakDays, overallAccuracy, type Call, type Crowd,
+  type GameState, type OpenLaunch, type ResolvedLaunch, type Round,
 } from "@/lib/game";
+
+function useCrowd(date: string | undefined): Crowd {
+  const [crowd, setCrowd] = useState<Crowd>({});
+  useEffect(() => {
+    if (!date) return;
+    fetch(`/api/crowd?date=${date}`).then((r) => r.json()).then(setCrowd).catch(() => {});
+  }, [date]);
+  return crowd;
+}
+
+function crowdShipPct(crowd: Crowd, id: string): number | null {
+  const c = crowd[id];
+  if (!c || c.total < 3) return null;
+  return Math.round((100 * c.ships) / c.total);
+}
 
 type Phase = "open" | "judging" | "locked";
 
@@ -35,8 +50,18 @@ export function Game({
     day.calls[launch.id] = call;
     saveState(s);
     setState(s);
-    if (idx + 1 >= today.launches.length) setPhase("locked");
-    else setIdx(idx + 1);
+    if (idx + 1 >= today.launches.length) {
+      setPhase("locked");
+      fetch("/api/calls", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          anon_id: getAnonId(),
+          round_date: today.date,
+          calls: Object.entries(day.calls).map(([launch_id, c]) => ({ launch_id, call: c })),
+        }),
+      }).catch(() => {});
+    } else setIdx(idx + 1);
   }
 
   return (
@@ -98,6 +123,7 @@ function Header({ state, todayDate }: { state: GameState; todayDate: string }) {
 
 function RevealStrip({ round, state }: { round: Round<ResolvedLaunch>; state: GameState }) {
   const result = useMemo(() => scoreReveal(state, round), [state, round]);
+  const crowd = useCrowd(round.date);
   const ships = round.launches.filter((l) => l.outcome === "ship");
   return (
     <section className="mt-6 rounded-xl border border-edge bg-surface p-4 card-enter">
@@ -118,7 +144,12 @@ function RevealStrip({ round, state }: { round: Round<ResolvedLaunch>; state: Ga
             <div key={l.id} className="flex items-start justify-between gap-3 text-[13px]">
               <div className="min-w-0">
                 <p className="truncate text-ink">{l.title}</p>
-                <p className="text-[11.5px] italic text-ink-faint">{l.editorial}</p>
+                <p className="text-[11.5px] italic text-ink-faint">
+                  {l.editorial}
+                  {crowdShipPct(crowd, l.id) !== null && (
+                    <span className="not-italic"> · {crowdShipPct(crowd, l.id)}% of players called ship</span>
+                  )}
+                </p>
               </div>
               <div className="flex shrink-0 items-center gap-2 pt-0.5">
                 {call && (
@@ -231,13 +262,19 @@ function LockedPanel({ state, today }: { state: GameState; today: Round<OpenLaun
   const acc = overallAccuracy(state);
   const calls = state.days[today.date]?.calls ?? {};
   const shipCount = Object.values(calls).filter((c) => c === "ship").length;
+  const crowd = useCrowd(today.date);
   const [copied, setCopied] = useState(false);
 
   function share() {
-    const grid = today.launches.map((l) => (calls[l.id] === "ship" ? "🟩" : "⬛")).join("");
-    const text = `Called It — ${today.date}\nmy calls: ${grid} (${shipCount} ship${shipCount === 1 ? "" : "s"})\nreality scores me tomorrow 09:00.\ncan you read a launch? calledit.io`;
-    if (navigator.share) navigator.share({ text }).catch(() => {});
-    else { navigator.clipboard.writeText(text); setCopied(true); setTimeout(() => setCopied(false), 1500); }
+    const grid = today.launches.map((l) => (calls[l.id] === "ship" ? "s" : "k")).join("");
+    const streak = streakDays(state, today.date);
+    const q = new URLSearchParams({ d: today.date, g: grid });
+    if (acc.total > 0) q.set("pct", String(acc.pct));
+    if (streak > 1) q.set("streak", String(streak));
+    const url = `${location.origin}/share?${q}`;
+    const text = "Called It — my blind calls on today's real launches. Reality scores me tomorrow 09:00.";
+    if (navigator.share) navigator.share({ text, url }).catch(() => {});
+    else { navigator.clipboard.writeText(`${text} ${url}`); setCopied(true); setTimeout(() => setCopied(false), 1500); }
   }
 
   return (
@@ -248,6 +285,26 @@ function LockedPanel({ state, today }: { state: GameState; today: Round<OpenLaun
       </h2>
       <p className="mt-2 text-[14px] text-ink-dim">Reality scores you tomorrow at 09:00. Come back for the reveal.</p>
       {today.bot_calls && <BotLine today={today} calls={calls} />}
+      {Object.keys(crowd).length > 0 && (
+        <div className="mx-auto mt-5 max-w-sm rounded-xl border border-edge bg-surface p-4 text-left">
+          <p className="label">You vs the crowd</p>
+          <div className="mt-2 space-y-1.5">
+            {today.launches.map((l) => {
+              const pct = crowdShipPct(crowd, l.id);
+              if (pct === null) return null;
+              return (
+                <div key={l.id} className="flex items-center justify-between gap-3 text-[12.5px]">
+                  <span className="truncate text-ink-dim">{l.title.split(/[–—-]/)[0].trim()}</span>
+                  <span className="shrink-0 font-mono text-[11px]">
+                    <span className={calls[l.id] === "ship" ? "text-ship" : "text-ink-faint"}>{calls[l.id]}</span>
+                    <span className="text-ink-faint"> · {pct}% shipped</span>
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       <div className="mx-auto mt-6 max-w-sm rounded-xl border border-edge bg-surface p-5 text-left">
         <p className="label">Your calibration</p>
