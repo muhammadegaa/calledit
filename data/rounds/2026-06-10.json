@@ -11,41 +11,8 @@
       "host": "github.com",
       "category": "ai",
       "launched_at": "2026-06-10T09:43:16Z",
-      "age_h_at_pick": 2,
-      "points_at_pick": 7
-    },
-    {
-      "id": "48473221",
-      "source": "hn",
-      "title": "OpenClaw and Hermes Agent call each other via XMPP",
-      "url": "https://github.com/ai-sns/openclaw-hermes-agent-network",
-      "host": "github.com",
-      "category": "ai",
-      "launched_at": "2026-06-10T08:30:11Z",
-      "age_h_at_pick": 3,
-      "points_at_pick": 5
-    },
-    {
-      "id": "48472991",
-      "source": "hn",
-      "title": "Loom, an open-source delivery harness for coding agents",
-      "url": "https://github.com/valkor-ai/loom",
-      "host": "github.com",
-      "category": "devtools",
-      "launched_at": "2026-06-10T07:57:17Z",
-      "age_h_at_pick": 4,
-      "points_at_pick": 3
-    },
-    {
-      "id": "48473739",
-      "source": "hn",
-      "title": "Plug and AI – Slack bot for the whole team, not per-seat",
-      "url": "https://plugand.ai/",
-      "host": "plugand.ai",
-      "category": "ai",
-      "launched_at": "2026-06-10T09:29:29Z",
-      "age_h_at_pick": 2,
-      "points_at_pick": 1
+      "age_h_at_pick": 6,
+      "points_at_pick": 43
     },
     {
       "id": "48473696",
@@ -55,6 +22,39 @@
       "host": "github.com",
       "category": "other",
       "launched_at": "2026-06-10T09:24:06Z",
+      "age_h_at_pick": 6,
+      "points_at_pick": 4
+    },
+    {
+      "id": "48473221",
+      "source": "hn",
+      "title": "OpenClaw and Hermes Agent call each other via XMPP",
+      "url": "https://github.com/ai-sns/openclaw-hermes-agent-network",
+      "host": "github.com",
+      "category": "ai",
+      "launched_at": "2026-06-10T08:30:11Z",
+      "age_h_at_pick": 7,
+      "points_at_pick": 5
+    },
+    {
+      "id": "48475518",
+      "source": "hn",
+      "title": "Time Progress Bar in macOS menu bar",
+      "url": "https://timegauge.minilabs.cc/",
+      "host": "timegauge.minilabs.cc",
+      "category": "other",
+      "launched_at": "2026-06-10T12:48:47Z",
+      "age_h_at_pick": 2,
+      "points_at_pick": 1
+    },
+    {
+      "id": "48475807",
+      "source": "hn",
+      "title": "Employment contract analysis for Ontario's Workforce",
+      "url": "https://basalaw.vercel.app",
+      "host": "basalaw.vercel.app",
+      "category": "other",
+      "launched_at": "2026-06-10T13:13:33Z",
       "age_h_at_pick": 2,
       "points_at_pick": 3
     },
@@ -63,39 +63,39 @@
       "source": "ph",
       "title": "Publora",
       "tagline": "The Publishing API for the Agent Era.",
-      "url": "https://www.producthunt.com/r/FFFDHH6IKSRQWU?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Called+It+%28ID%3A+287610%29",
-      "host": "producthunt.com",
+      "url": "https://publora.com/",
+      "host": "publora.com",
       "category": "ai",
       "launched_at": "2026-06-10T07:01:00Z",
-      "age_h_at_pick": 5,
+      "age_h_at_pick": 8,
       "rank_at_pick": 1,
-      "votes_at_pick": 195
+      "votes_at_pick": 330
     },
     {
-      "id": "ph-1168019",
+      "id": "ph-1156179",
       "source": "ph",
-      "title": "Hero Studio Photos",
-      "tagline": "Snap one photo, get listing-ready shots from every angle",
-      "url": "https://www.producthunt.com/r/VNMX7USPKQFIDY?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Called+It+%28ID%3A+287610%29",
-      "host": "producthunt.com",
-      "category": "consumer",
+      "title": "SeaTicket",
+      "tagline": "Al agent that resolves issues across all your channels",
+      "url": "https://seaticket.ai/",
+      "host": "seaticket.ai",
+      "category": "ai",
       "launched_at": "2026-06-10T07:01:00Z",
-      "age_h_at_pick": 5,
+      "age_h_at_pick": 8,
       "rank_at_pick": 13,
-      "votes_at_pick": 89
+      "votes_at_pick": 104
     },
     {
       "id": "ph-1167872",
       "source": "ph",
       "title": "Zingle",
       "tagline": "Learn words in context with AI",
-      "url": "https://www.producthunt.com/r/HQ77H6POHIZXEF?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+Called+It+%28ID%3A+287610%29",
-      "host": "producthunt.com",
+      "url": "https://learnzingle.com/",
+      "host": "learnzingle.com",
       "category": "ai",
       "launched_at": "2026-06-10T07:01:00Z",
-      "age_h_at_pick": 5,
+      "age_h_at_pick": 8,
       "rank_at_pick": 17,
-      "votes_at_pick": 85
+      "votes_at_pick": 91
     }
   ]
 }

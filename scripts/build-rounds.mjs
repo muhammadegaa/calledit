@@ -79,6 +79,37 @@ async function phPosts(dateStr) {
   });
 }
 
+// PH `website` is a producthunt.com/r/ redirect — resolve to the real product
+// URL so the host reads right and mshots screenshots the product, not a bot-check.
+async function resolvePhUrl(url) {
+  // Read Location headers only — never fetch the destination site.
+  let current = url;
+  try {
+    for (let hop = 0; hop < 3; hop++) {
+      if (!new URL(current).hostname.includes("producthunt.com")) break;
+      const r = await fetch(current, { redirect: "manual", signal: AbortSignal.timeout(8000), headers: { "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0 Safari/537.36" } });
+      let loc = r.headers.get("location");
+      if (!loc) {
+        await new Promise((res) => setTimeout(res, 700));
+        const r2 = await fetch(current, { redirect: "manual", signal: AbortSignal.timeout(8000), headers: { "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0 Safari/537.36" } });
+        loc = r2.headers.get("location");
+      }
+      if (!loc) break;
+      current = new URL(loc, current).href;
+    }
+  } catch {}
+  return current.replace(/\?ref=producthunt.*$/, "");
+}
+
+async function phPickResolved(posts, seedStr) {
+  const picks = phPick(posts, seedStr);
+  for (const p of picks) {
+    p.url = await resolvePhUrl(p.url);
+    try { p.host = new URL(p.url).hostname.replace(/^www\./, ""); } catch {}
+  }
+  return picks;
+}
+
 function phPick(posts, seedStr) {
   // PH GraphQL caps a page at 20 posts regardless of `first` — tier within it.
   const top = posts.filter((p) => p.rank <= 8);
@@ -181,7 +212,7 @@ hnPicks = hnPicks.slice(0, 5).map((l) => ({
 let phPicks = [];
 try {
   const posts = await phPosts(phDate(now));
-  phPicks = phPick(posts, today + "ph").map((p) => ({
+  phPicks = (await phPickResolved(posts, today + "ph")).map((p) => ({
     id: p.id, source: "ph", title: p.title, tagline: p.tagline, url: p.url,
     host: p.host, category: p.category, launched_at: p.launched_at,
     age_h_at_pick: Math.round((now - Date.parse(p.launched_at) / 1000) / HOUR),
@@ -214,7 +245,7 @@ for (let d = 1; d <= 3; d++) {
 
   try {
     const posts = await phPosts(phDate(pickTime));
-    const phResolved = phPick(posts, date + "ph").map((p) => ({
+    const phResolved = (await phPickResolved(posts, date + "ph")).map((p) => ({
       id: p.id, source: "ph", title: p.title, tagline: p.tagline, url: p.url,
       host: p.host, category: p.category, launched_at: p.launched_at,
       outcome: p.rank <= 5 ? "ship" : "skip", final_points: p.votes, peak_rank: p.rank,
