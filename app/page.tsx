@@ -10,7 +10,10 @@ function loadRounds(): {
   resolved: Round<ResolvedLaunch>[];
 } {
   const dir = join(process.cwd(), "data", "rounds");
-  const files = readdirSync(dir).filter((f) => f.endsWith(".json")).sort().reverse();
+  let files: string[] = [];
+  try {
+    files = readdirSync(dir).filter((f) => f.endsWith(".json")).sort().reverse();
+  } catch {}
   let today: Round<OpenLaunch> | null = null;
   const resolved: Round<ResolvedLaunch>[] = [];
   for (const f of files) {
