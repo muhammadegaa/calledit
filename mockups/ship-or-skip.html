@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { font-family: -apple-system, 'Segoe UI', sans-serif; }
+  .mono { font-family: ui-monospace, 'SF Mono', Menlo, monospace; }
+  .ring-timer { background: conic-gradient(#22c55e 0deg 252deg, #27272a 252deg 360deg); }
+</style>
+</head>
+<body class="bg-[#0a0a0b] text-zinc-100 min-h-screen">
+  <header class="border-b border-zinc-800 px-6 py-3 flex items-center gap-6">
+    <span class="font-black tracking-tight text-lg">SHIP<span class="text-green-400">/</span>SKIP</span>
+    <span class="text-[13px] text-zinc-500">Wednesday, June 10 · Round 3 of 5</span>
+    <div class="ml-auto flex items-center gap-4 text-[13px]">
+      <span class="mono text-amber-400">🔥 12-day streak</span>
+      <span class="mono text-zinc-400">today: <span class="text-zinc-100">2/2</span></span>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-6 py-8 grid grid-cols-[1fr_320px] gap-8">
+    <section>
+      <div class="flex items-center justify-between mb-3">
+        <p class="text-[12px] uppercase tracking-[0.2em] text-zinc-500">Launched 4 hours ago · Show HN</p>
+        <div class="ring-timer rounded-full w-10 h-10 flex items-center justify-center">
+          <div class="bg-[#0a0a0b] rounded-full w-8 h-8 flex items-center justify-center mono text-[12px] text-green-400">21</div>
+        </div>
+      </div>
+
+      <div class="rounded-xl overflow-hidden border border-zinc-800 bg-white">
+        <div class="bg-zinc-100 px-4 py-2 flex items-center gap-2 border-b border-zinc-200">
+          <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span><span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span><span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+          <span class="text-[12px] text-zinc-500 mono ml-2">tracelog.dev</span>
+        </div>
+        <div class="px-10 py-12 text-zinc-900">
+          <p class="text-[11px] font-bold uppercase tracking-widest text-indigo-600 mb-3">Open source · YC-style launch</p>
+          <h2 class="text-3xl font-bold tracking-tight leading-tight">Distributed tracing that<br>explains itself.</h2>
+          <p class="mt-3 text-[15px] text-zinc-500 max-w-md">TraceLog turns your OpenTelemetry spans into plain-English incident stories. Self-hosted, 5-minute setup.</p>
+          <div class="mt-5 flex gap-3">
+            <span class="bg-zinc-900 text-white text-[13px] px-4 py-2 rounded-md font-medium">brew install tracelog</span>
+            <span class="border border-zinc-300 text-[13px] px-4 py-2 rounded-md text-zinc-600">Star on GitHub</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-5 grid grid-cols-2 gap-4">
+        <button class="bg-green-500 hover:bg-green-400 text-black font-black text-xl py-4 rounded-xl tracking-tight">SHIP ▲<div class="text-[11px] font-medium mt-0.5 opacity-70">front page today</div></button>
+        <button class="bg-zinc-800 hover:bg-zinc-700 text-zinc-300 font-black text-xl py-4 rounded-xl tracking-tight">SKIP ▼<div class="text-[11px] font-medium mt-0.5 opacity-50">sinks by midnight</div></button>
+      </div>
+      <p class="mt-3 text-center text-[12px] text-zinc-600">your call locks in · reality scores you tomorrow 9:00</p>
+    </section>
+
+    <aside class="space-y-4">
+      <div class="rounded-xl border border-zinc-800 bg-zinc-900/60 p-4">
+        <p class="text-[11px] uppercase tracking-[0.18em] text-zinc-500 mb-3">Yesterday's reveal</p>
+        <div class="space-y-2.5 text-[13px]">
+          <div class="flex items-center justify-between"><span class="truncate text-zinc-300">Loomly for Slack</span><span class="mono text-green-400">✓ skip</span></div>
+          <div class="flex items-center justify-between"><span class="truncate text-zinc-300">Pinch — AI dubbing</span><span class="mono text-green-400">✓ ship</span></div>
+          <div class="flex items-center justify-between"><span class="truncate text-zinc-300">Querybase</span><span class="mono text-red-400">✗ ship</span></div>
+          <div class="flex items-center justify-between"><span class="truncate text-zinc-300">DeskMica</span><span class="mono text-green-400">✓ skip</span></div>
+        </div>
+        <p class="mt-3 text-[12px] text-zinc-500">3/4 — reality says Querybase hit #4. <span class="text-zinc-300">The launch machine got it there.</span></p>
+      </div>
+
+      <div class="rounded-xl border border-green-900/60 bg-gradient-to-b from-green-950/40 to-zinc-900/60 p-4">
+        <p class="text-[11px] uppercase tracking-[0.18em] text-green-500 mb-2">Your calibration</p>
+        <div class="mono text-4xl font-bold">68<span class="text-lg text-zinc-500">%</span></div>
+        <p class="text-[12px] text-zinc-500 mb-3">overall accuracy · 47 calls</p>
+        <div class="space-y-2 text-[12px]">
+          <div><div class="flex justify-between mb-1"><span class="text-zinc-400">devtools</span><span class="mono text-green-400">81%</span></div><div class="h-1.5 bg-zinc-800 rounded"><div class="h-1.5 bg-green-500 rounded" style="width:81%"></div></div></div>
+          <div><div class="flex justify-between mb-1"><span class="text-zinc-400">AI / agents</span><span class="mono text-amber-400">62%</span></div><div class="h-1.5 bg-zinc-800 rounded"><div class="h-1.5 bg-amber-500 rounded" style="width:62%"></div></div></div>
+          <div><div class="flex justify-between mb-1"><span class="text-zinc-400">consumer</span><span class="mono text-red-400">31%</span></div><div class="h-1.5 bg-zinc-800 rounded"><div class="h-1.5 bg-red-500 rounded" style="width:31%"></div></div></div>
+        </div>
+        <button class="mt-4 w-full border border-zinc-700 rounded-lg py-2 text-[12px] text-zinc-300">share calibration card ↗</button>
+      </div>
+    </aside>
+  </main>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { font-family: -apple-system, 'Segoe UI', sans-serif; }
+  .mono { font-family: ui-monospace, Menlo, monospace; }
+</style>
+</head>
+<body class="bg-[#f6f4f0] text-zinc-900 min-h-screen">
+  <header class="px-8 py-4 flex items-center gap-3 border-b border-zinc-200 bg-white">
+    <span class="font-black tracking-tight">THE STAKEHOLDER ROOM</span>
+    <span class="text-[13px] text-zinc-400">Your Q3 roadmap, cross-examined before the real meeting does it</span>
+    <span class="ml-auto text-[12px] bg-zinc-900 text-white rounded-full px-3 py-1">Round 2 of 3 · rebuttal phase</span>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-8 py-8">
+    <div class="mb-6 bg-white rounded-xl border border-zinc-200 px-5 py-3.5 flex items-center gap-3">
+      <span class="text-[11px] uppercase tracking-[0.18em] text-zinc-400 shrink-0">On trial</span>
+      <span class="text-[14px] font-medium">"Q3: Ship AI-powered search, migrate billing to usage-based, redesign onboarding"</span>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4">
+      <div class="bg-white rounded-xl border-l-4 border-red-500 border border-zinc-200 p-5">
+        <div class="flex items-center gap-3 mb-2.5">
+          <div class="w-10 h-10 rounded-full bg-red-100 text-red-700 flex items-center justify-center font-bold">M</div>
+          <div><p class="font-bold text-[14px]">Margaret · CFO</p><p class="text-[11px] text-zinc-400">arms crossed since slide 2</p></div>
+        </div>
+        <p class="text-[14px] leading-relaxed">"Usage-based billing mid-quarter means revenue I can't forecast for the board. You wrote 'migration is straightforward' — who carries the dunning edge cases, finance or you?"</p>
+      </div>
+
+      <div class="bg-white rounded-xl border-l-4 border-amber-500 border border-zinc-200 p-5">
+        <div class="flex items-center gap-3 mb-2.5">
+          <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold">D</div>
+          <div><p class="font-bold text-[14px]">Danny · Sales Lead</p><p class="text-[11px] text-zinc-400">already promised things</p></div>
+        </div>
+        <p class="text-[14px] leading-relaxed">"I told Meridian we'd have SSO by August — it's not on this roadmap. If AI search slips past it, I lose a $240k renewal. Which one do you want to explain to them?"</p>
+      </div>
+
+      <div class="bg-white rounded-xl border-l-4 border-sky-600 border border-zinc-200 p-5">
+        <div class="flex items-center gap-3 mb-2.5">
+          <div class="w-10 h-10 rounded-full bg-sky-100 text-sky-700 flex items-center justify-center font-bold">P</div>
+          <div><p class="font-bold text-[14px]">Priya · Staff Engineer</p><p class="text-[11px] text-zinc-400">has seen things</p></div>
+        </div>
+        <p class="text-[14px] leading-relaxed">"'AI-powered search' touches the indexer we've patched around since 2024. That's not 6 weeks, that's 6 months — unless you cut the redesign and give me the onboarding team."</p>
+      </div>
+
+      <div class="bg-white rounded-xl border-l-4 border-emerald-600 border border-zinc-200 p-5">
+        <div class="flex items-center gap-3 mb-2.5">
+          <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">S</div>
+          <div><p class="font-bold text-[14px]">Sam · Your biggest customer</p><p class="text-[11px] text-zinc-400">pays for none of this</p></div>
+        </div>
+        <p class="text-[14px] leading-relaxed">"Honestly? I don't need AI search. I need exports that don't time out. It's been 'on the radar' for three quarters. What's it behind this time?"</p>
+      </div>
+    </div>
+
+    <div class="mt-6 bg-zinc-900 text-zinc-100 rounded-xl p-6">
+      <p class="text-[11px] uppercase tracking-[0.2em] text-zinc-400 mb-3">Your prep sheet — what to say in the real meeting</p>
+      <ol class="space-y-2 text-[14px] list-decimal list-inside text-zinc-200">
+        <li>Open with the SSO conflict yourself — Danny's $240k beats your AI-search headline. Re-sequence or get his sign-off in writing.</li>
+        <li>Bring the indexer debt number. "6 weeks" dies in the room unless Priya pre-agrees scope — meet her before the meeting.</li>
+        <li>Kill or commit on exports. Sam's ask is cheap, three quarters stale, and the trust cost is compounding.</li>
+      </ol>
+      <div class="mt-4 flex gap-2.5">
+        <button class="bg-white text-zinc-900 text-[13px] font-semibold rounded-lg px-4 py-2">Run round 3 — they respond to your rebuttals</button>
+        <button class="border border-zinc-600 text-[13px] rounded-lg px-4 py-2 text-zinc-300">Export prep sheet</button>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

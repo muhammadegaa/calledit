@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { font-family: -apple-system, 'Segoe UI', sans-serif; }
+  .mono { font-family: ui-monospace, Menlo, monospace; }
+</style>
+</head>
+<body class="bg-[#ececec] text-zinc-900 min-h-screen">
+  <header class="bg-white border-b border-zinc-200 px-6 py-3 flex items-center gap-4">
+    <span class="font-black tracking-tight">LAUNCH REEL</span>
+    <span class="mono text-[12px] text-zinc-400">nectic.app → 42s reel · rendered in 71s</span>
+    <div class="ml-auto flex gap-2">
+      <button class="bg-zinc-900 text-white text-[13px] font-semibold rounded-lg px-4 py-2">Download 9:16</button>
+      <button class="border border-zinc-300 text-[13px] rounded-lg px-4 py-2 text-zinc-600">16:9 for X</button>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-6 py-8 grid grid-cols-[300px_1fr] gap-10">
+    <div class="justify-self-center">
+      <div class="w-[270px] h-[560px] bg-black rounded-[36px] p-2.5 shadow-2xl">
+        <div class="w-full h-full rounded-[28px] overflow-hidden relative bg-gradient-to-b from-emerald-900 via-emerald-700 to-emerald-500">
+          <div class="absolute inset-0 flex flex-col justify-center px-6">
+            <p class="text-emerald-200 text-[11px] font-bold uppercase tracking-[0.2em]">your sales chats</p>
+            <p class="text-white text-[30px] font-black leading-[1.05] mt-2">847 WhatsApp messages.</p>
+            <p class="text-white/90 text-[30px] font-black leading-[1.05]">One insight.</p>
+            <div class="mt-5 bg-white/12 backdrop-blur rounded-xl p-3 border border-white/20">
+              <p class="text-white/95 text-[13px]">"Customers ask about <b>bulk pricing</b> 3× more than your site mentions it"</p>
+            </div>
+          </div>
+          <div class="absolute bottom-5 inset-x-6">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 rounded-full bg-white/95 flex items-center justify-center text-[18px] text-emerald-700">▶</div>
+              <div class="flex-1">
+                <div class="h-1 bg-white/30 rounded"><div class="h-1 w-1/3 bg-white rounded"></div></div>
+                <p class="text-white/70 text-[10px] mono mt-1.5">0:14 / 0:42</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <p class="text-[11px] uppercase tracking-[0.2em] text-zinc-400 mb-3">Storyboard — written from your actual page</p>
+      <div class="grid grid-cols-4 gap-3 mb-6">
+        <div class="rounded-lg border-2 border-emerald-600 bg-white p-2.5"><div class="h-14 rounded bg-emerald-100 mb-2"></div><p class="text-[11px] font-bold">1 · Hook</p><p class="text-[10.5px] text-zinc-500">your headline, animated</p></div>
+        <div class="rounded-lg border border-zinc-200 bg-white p-2.5"><div class="h-14 rounded bg-zinc-100 mb-2"></div><p class="text-[11px] font-bold">2 · Problem</p><p class="text-[10.5px] text-zinc-500">"insights die in chat"</p></div>
+        <div class="rounded-lg border border-zinc-200 bg-white p-2.5"><div class="h-14 rounded bg-zinc-100 mb-2"></div><p class="text-[11px] font-bold">3 · Demo</p><p class="text-[10.5px] text-zinc-500">your real UI, zoom + pan</p></div>
+        <div class="rounded-lg border border-zinc-200 bg-white p-2.5"><div class="h-14 rounded bg-zinc-100 mb-2"></div><p class="text-[11px] font-bold">4 · CTA</p><p class="text-[10.5px] text-zinc-500">"free for 3 chats"</p></div>
+      </div>
+
+      <p class="text-[11px] uppercase tracking-[0.2em] text-zinc-400 mb-2">Voiceover script <span class="text-zinc-300">· editable</span></p>
+      <div class="bg-white rounded-xl border border-zinc-200 divide-y divide-zinc-100">
+        <div class="px-4 py-2.5 flex gap-4 text-[13px]"><span class="mono text-zinc-400 w-10">0:00</span><span>Your best product feedback is buried in WhatsApp.</span></div>
+        <div class="px-4 py-2.5 flex gap-4 text-[13px] bg-emerald-50"><span class="mono text-emerald-600 w-10">0:09</span><span>Nectic reads your sales chats and finds what customers actually want.</span></div>
+        <div class="px-4 py-2.5 flex gap-4 text-[13px]"><span class="mono text-zinc-400 w-10">0:21</span><span>Like this: bulk pricing, asked 31 times. Mentioned on your site? Zero.</span></div>
+        <div class="px-4 py-2.5 flex gap-4 text-[13px]"><span class="mono text-zinc-400 w-10">0:34</span><span>Free for your first three chats. Link below.</span></div>
+      </div>
+      <p class="mt-4 text-[12px] text-zinc-400">voice: "Maya — warm, fast" · music: lo-fi pulse · captions: auto-burned</p>
+    </div>
+  </main>
+</body>
+</html>

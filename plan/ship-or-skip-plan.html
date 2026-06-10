@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { font-family: -apple-system, 'Segoe UI', sans-serif; }
+  .mono { font-family: ui-monospace, 'SF Mono', Menlo, monospace; }
+  .flow-box { border: 1.5px solid #3f3f46; border-radius: 8px; padding: 8px 14px; font-size: 13px; }
+  .flow-arrow { color: #71717a; font-size: 13px; padding: 0 6px; }
+</style>
+</head>
+<body class="bg-[#0a0a0b] text-zinc-100">
+<main class="max-w-4xl mx-auto px-8 py-10 space-y-12">
+
+  <section id="overview">
+    <p class="mono text-[11px] uppercase tracking-[0.25em] text-green-400">Ship/Skip — Interactive Plan v1 · Thariq method (P1)</p>
+    <h1 class="text-3xl font-black mt-3 tracking-tight">Product judgment as a daily sport,<br>scored by reality.</h1>
+    <p class="mt-3 text-[14.5px] text-zinc-400 max-w-2xl">Every day: real launches from Show HN + Product Hunt. You call each one — front page or flop — in 30 seconds off the real landing page. Reality grades you within 24h. Streaks, a calibration profile per category, a shareable card.</p>
+    <div class="mt-5 grid grid-cols-4 gap-3 text-center">
+      <div class="rounded-lg border border-zinc-800 p-3"><div class="mono text-2xl font-bold text-green-400">PT 8</div><div class="text-[11px] text-zinc-500 mt-1">judgment is the unmeasured PM skill; 24h feedback loop</div></div>
+      <div class="rounded-lg border border-zinc-800 p-3"><div class="mono text-2xl font-bold text-green-400">Craft 9t</div><div class="text-[11px] text-zinc-500 mt-1">game feel is deterministic polish, not model roulette</div></div>
+      <div class="rounded-lg border border-zinc-800 p-3"><div class="mono text-2xl font-bold text-green-400">Orig 8.5</div><div class="text-[11px] text-zinc-500 mt-1">live-resolution column verified empty (Jun 2026)</div></div>
+      <div class="rounded-lg border border-zinc-800 p-3"><div class="mono text-2xl font-bold text-green-400">Ship 8.5</div><div class="text-[11px] text-zinc-500 mt-1">no login, 10s to first call, real data always flowing</div></div>
+    </div>
+  </section>
+
+  <section id="flows">
+    <h2 class="text-[12px] uppercase tracking-[0.25em] text-zinc-500 border-b border-zinc-800 pb-2">1 · Flows (the first one decides the hackathon)</h2>
+
+    <div class="mt-5">
+      <p class="text-[13px] font-bold text-amber-400 mb-2">FIRST VISIT — a judge or voter, single session, must feel complete</p>
+      <div class="flex flex-wrap items-center gap-y-2">
+        <span class="flow-box bg-zinc-900">Land</span><span class="flow-arrow">→</span>
+        <span class="flow-box bg-zinc-900">“Yesterday, 3,012 people judged 5 launches. Here's what reality said.” <b>instant reveal payoff</b></span><span class="flow-arrow">→</span>
+        <span class="flow-box bg-zinc-900">“Your turn — today's 5”</span><span class="flow-arrow">→</span>
+        <span class="flow-box border-green-700 bg-green-950/30">judge 5 launches (30s each)</span><span class="flow-arrow">→</span>
+        <span class="flow-box bg-zinc-900">instant provisional read: “you vs the crowd” + vs-the-bot</span><span class="flow-arrow">→</span>
+        <span class="flow-box border-green-700 bg-green-950/30">share card + “reality scores you tomorrow 9:00”</span>
+      </div>
+      <p class="mt-2 text-[12px] text-zinc-500">Key design move: the unresolved 24h bet is the <i>last</i> beat, never the first. First visit opens with yesterday's resolved round (real data, real outcome) so the loop is felt immediately. Crowd % + bot comparison give same-session feedback before reality's verdict.</p>
+    </div>
+
+    <div class="mt-6">
+      <p class="text-[13px] font-bold text-zinc-300 mb-2">RETURNING VISIT (the ritual)</p>
+      <div class="flex flex-wrap items-center gap-y-2">
+        <span class="flow-box bg-zinc-900">Land</span><span class="flow-arrow">→</span>
+        <span class="flow-box border-amber-700 bg-amber-950/20">REVEAL: yesterday's calls scored, streak updated, calibration moves</span><span class="flow-arrow">→</span>
+        <span class="flow-box bg-zinc-900">today's round</span><span class="flow-arrow">→</span>
+        <span class="flow-box bg-zinc-900">share / leaderboard</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="screens">
+    <h2 class="text-[12px] uppercase tracking-[0.25em] text-zinc-500 border-b border-zinc-800 pb-2">2 · Screens</h2>
+    <div class="mt-4 grid grid-cols-2 gap-4 text-[13px]">
+      <div class="rounded-lg border border-zinc-800 p-4"><b class="text-green-400">S1 · Judge screen</b> — launch card (live screenshot of real landing page, name, tagline, source badge, hours-since-launch), 30s timer ring, SHIP/SKIP buttons, round progress 3/5. <span class="text-zinc-500">Mock approved by Ega (mockups/ship-or-skip.html).</span></div>
+      <div class="rounded-lg border border-zinc-800 p-4"><b class="text-green-400">S2 · Reveal screen</b> — per-launch verdict rows (✓/✗ + what actually happened: “#4 on PH”, “died at 3 points”), one editorial line per reveal, streak flame, calibration deltas animating.</div>
+      <div class="rounded-lg border border-zinc-800 p-4"><b class="text-green-400">S3 · Calibration profile</b> — overall %, per-category bars (devtools / AI / consumer / b2b), n calls, percentile vs crowd. THE share object.</div>
+      <div class="rounded-lg border border-zinc-800 p-4"><b class="text-green-400">S4 · Share card</b> — OG-image endpoint: grid of today's calls (🟩🟥 wordle-grammar), calibration %, “Can you read a launch? shipskip.app”.</div>
+    </div>
+  </section>
+
+  <section id="components">
+    <h2 class="text-[12px] uppercase tracking-[0.25em] text-zinc-500 border-b border-zinc-800 pb-2">3 · Component hierarchy & data</h2>
+    <div class="mt-4 grid grid-cols-2 gap-6">
+      <pre class="mono text-[12px] text-zinc-400 leading-relaxed">App
+├─ RevealStrip (yesterday, resolved)
+│   ├─ VerdictRow (call vs reality + editorial)
+│   └─ StreakFlame / CalibrationDelta
+├─ Round (today)
+│   ├─ LaunchCard (shot, meta, TimerRing)
+│   ├─ CallButtons (SHIP / SKIP)
+│   └─ ProgressDots (1-5)
+├─ CalibrationCard (share object)
+├─ CrowdBar (you vs crowd vs bot)
+└─ ShareSheet (OG image + copy link)</pre>
+      <div class="text-[12.5px] text-zinc-400 space-y-3">
+        <p><b class="text-zinc-200">Sources:</b> HN Algolia (free, keyless) for Show HN; PH GraphQL v2 (token, non-commercial OK) for PH launches. Screenshot of each landing page captured at ingest (our own headless shot, cached).</p>
+        <p><b class="text-zinc-200">Supabase tables:</b> <span class="mono">launches</span> (id, source, url, title, tagline, shot_url, launched_at, category), <span class="mono">rounds</span> (date, launch_ids[5]), <span class="mono">calls</span> (anon_id, launch_id, call, ts), <span class="mono">resolutions</span> (launch_id, outcome, peak_rank, points, resolved_at).</p>
+        <p><b class="text-zinc-200">Crons (Vercel):</b> 09:00 ingest — pick 5 judgeable launches ~4-8h old; 09:00+24h resolve — fetch final rank/points, score all calls, precompute crowd stats.</p>
+        <p><b class="text-zinc-200">Identity:</b> anon_id in localStorage. No login anywhere.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="decisions">
+    <h2 class="text-[12px] uppercase tracking-[0.25em] text-zinc-500 border-b border-zinc-800 pb-2">4 · Decision tree — open spec questions (P2: answered before code)</h2>
+    <div class="mt-4 space-y-4 text-[13px]">
+      <div class="rounded-lg border border-amber-900/60 bg-amber-950/15 p-4">
+        <b class="text-amber-400">D1 · Ground truth.</b> Both sources, two leagues (HN = organic league, PH = launch-machine league) <span class="text-zinc-500">⟶ recommended: the contrast is content</span> · or HN-only (cleanest resolution) · or PH-only.
+        <p class="text-zinc-500 mt-1.5">Resolution defs: HN SHIP = reaches front page (rank ≤ 30) within 24h. PH SHIP = top 5 of its day. Both fully computable from APIs.</p>
+      </div>
+      <div class="rounded-lg border border-amber-900/60 bg-amber-950/15 p-4">
+        <b class="text-amber-400">D2 · The bot.</b> Claude makes its own 5 calls daily; players see “you vs crowd vs the bot”. In v1 (needs API credits, ~1 call/day = pennies) <span class="text-zinc-500">⟶ recommended</span> · or post-hackathon.
+      </div>
+      <div class="rounded-lg border border-amber-900/60 bg-amber-950/15 p-4">
+        <b class="text-amber-400">D3 · Day boundary.</b> Rounds cut at 09:00 WIB (your demo timezone) · 09:00 user-local (complex) · 00:00 PT (PH-native). <span class="text-zinc-500">⟶ recommended: fixed UTC+7 morning, shown as “today's round” everywhere.</span>
+      </div>
+      <div class="rounded-lg border border-amber-900/60 bg-amber-950/15 p-4">
+        <b class="text-amber-400">D4 · Name & domain.</b> Ship/Skip (shipskip.app?) · The Front Page · Called It · other. Affects share-card copy, buy domain day 1.
+      </div>
+    </div>
+  </section>
+
+  <section id="workorder">
+    <h2 class="text-[12px] uppercase tracking-[0.25em] text-zinc-500 border-b border-zinc-800 pb-2">5 · Work order (P8): phases, verification, stop conditions</h2>
+    <div class="mt-4 space-y-2.5 text-[13px]">
+      <div class="grid grid-cols-[110px_1fr_1fr] gap-3 text-[11px] uppercase tracking-wider text-zinc-500"><span>Phase</span><span>Scope</span><span>Verified done when</span></div>
+      <div class="grid grid-cols-[110px_1fr_1fr] gap-3 border-t border-zinc-800 pt-2.5"><span class="mono text-green-400">D0 · Jun 10-11</span><span>Data spike: ingest real HN+PH launches, screenshot them, resolve yesterday's by rule, seed 3 days of history</span><span class="text-zinc-400">A JSON of 5 real launches for today + correctly-resolved outcomes for the last 3 days, spot-checked by hand</span></div>
+      <div class="grid grid-cols-[110px_1fr_1fr] gap-3 border-t border-zinc-800 pt-2.5"><span class="mono text-green-400">D1-2 · Jun 11-12</span><span>Core game: round UI, calls, localStorage identity, reveal strip with seeded history</span><span class="text-zinc-400">A stranger plays a full round + sees yesterday's reveal with zero instructions</span></div>
+      <div class="grid grid-cols-[110px_1fr_1fr] gap-3 border-t border-zinc-800 pt-2.5"><span class="mono text-green-400">D3 · Jun 13</span><span>Calibration profile, crowd stats, share card OG endpoint</span><span class="text-zinc-400">Share link unfurls with my real grid on X/WhatsApp</span></div>
+      <div class="grid grid-cols-[110px_1fr_1fr] gap-3 border-t border-zinc-800 pt-2.5"><span class="mono text-green-400">D4 · Jun 14</span><span>Deploy, domain, crons live, Novus installed (repo + snippet), design pass per design_system.html</span><span class="text-zinc-400">Two consecutive real daily cycles run unattended; Novus shows sessions</span></div>
+      <div class="grid grid-cols-[110px_1fr_1fr] gap-3 border-t border-zinc-800 pt-2.5"><span class="mono text-green-400">D5-6 · Jun 15-16</span><span>The bot (if D2=yes), editorial reveal lines, whimsy, mobile polish, QA</span><span class="text-zinc-400">/qa pass clean; mobile plays one-handed</span></div>
+      <div class="grid grid-cols-[110px_1fr_1fr] gap-3 border-t border-zinc-800 pt-2.5"><span class="mono text-green-400">D7-8 · Jun 17-18</span><span>Demo video, written description, Novus dashboard screenshot, MTP/X seeding for votes</span><span class="text-zinc-400">Video cut ≤3min; 30+ real players through the funnel</span></div>
+      <div class="grid grid-cols-[110px_1fr_1fr] gap-3 border-t border-zinc-800 pt-2.5"><span class="mono text-green-400">D9 · Jun 19</span><span>Submit (one day early)</span><span class="text-zinc-400">Devpost confirmation email</span></div>
+    </div>
+    <div class="mt-5 rounded-lg border border-red-900/60 bg-red-950/15 p-4 text-[13px]">
+      <b class="text-red-400">NON-GOALS (do not build):</b> logins/auth · comments or social features · more than 2 sources · ML prediction models · historical archive browsing · monetization · native apps · admin dashboard (seed via scripts).
+      <p class="mt-2 text-zinc-400"><b class="text-zinc-300">Stop conditions:</b> if PH API token not approved by Jun 12 → HN-only league, no schedule slip. If landing-page screenshots are unreliable → fall back to title+tagline+favicon cards. If daily cron misses → page renders last good round (never blank).</p>
+    </div>
+  </section>
+
+</main>
+</body>
+</html>

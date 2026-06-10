@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { font-family: -apple-system, 'Segoe UI', sans-serif; }
+  .mono { font-family: ui-monospace, 'SF Mono', Menlo, monospace; }
+</style>
+</head>
+<body class="bg-[#0b1220] text-slate-100 min-h-screen">
+  <header class="border-b border-slate-800 px-6 py-3 flex items-center gap-5">
+    <span class="font-black tracking-tight">WAR ROOM</span>
+    <span class="mono text-[12px] text-amber-400">● LAUNCH +2h 47m</span>
+    <span class="text-[12px] text-slate-400">codehere — Show HN + PH + Reddit + Bluesky</span>
+    <div class="ml-auto flex gap-5 mono text-[12px]">
+      <span class="text-slate-400">34 mentions</span>
+      <span class="text-green-400">▲ velocity +120%/h</span>
+      <span class="text-slate-300">replied 9/12</span>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-6 py-6 grid grid-cols-[1fr_280px] gap-6">
+    <section class="space-y-4">
+      <div class="rounded-xl border border-red-900/70 bg-red-950/20 p-4">
+        <div class="flex items-center gap-2.5 text-[12px]">
+          <span class="mono text-orange-400 font-bold">HN</span>
+          <span class="text-slate-300 font-semibold">tptacek_fan</span>
+          <span class="text-slate-500">12 min ago · Show HN thread</span>
+          <span class="ml-auto bg-red-600 text-white text-[10px] font-bold uppercase tracking-wider rounded px-2 py-0.5">Objection</span>
+        </div>
+        <p class="mt-2 text-[14px] text-slate-200">"Trust score on every file" — so a second LLM grades the first one? What happens when the grader hallucinates too?</p>
+        <div class="mt-3 rounded-lg bg-slate-900/80 border border-slate-700 p-3">
+          <p class="text-[10.5px] uppercase tracking-[0.18em] text-slate-500 mb-1.5">Drafted reply — HN voice (no marketing, concede first)</p>
+          <p class="text-[13.5px] text-slate-300">Fair concern. The report isn't regenerated — it's checked against the recorded action log, which is hash-chained per file. The grader can't claim an edit that isn't in the chain. Wrote up the design here if you want to poke holes: [link]</p>
+          <div class="mt-2.5 flex gap-2">
+            <button class="bg-green-600 text-[12px] font-semibold rounded px-3.5 py-1.5">Approve & copy</button>
+            <button class="border border-slate-600 text-[12px] text-slate-300 rounded px-3.5 py-1.5">Edit</button>
+            <span class="ml-auto self-center text-[11px] text-amber-400">⚠ top comment — answer in next 20 min</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rounded-xl border border-sky-900/70 bg-sky-950/20 p-4">
+        <div class="flex items-center gap-2.5 text-[12px]">
+          <span class="mono text-sky-400 font-bold">BSKY</span>
+          <span class="text-slate-300 font-semibold">@jess.dev</span>
+          <span class="text-slate-500">4 min ago</span>
+          <span class="ml-auto bg-sky-600 text-white text-[10px] font-bold uppercase tracking-wider rounded px-2 py-0.5">Question</span>
+        </div>
+        <p class="mt-2 text-[14px] text-slate-200">does codehere work with agents running in CI or just local?</p>
+        <div class="mt-3 rounded-lg bg-slate-900/80 border border-slate-700 p-3">
+          <p class="text-[10.5px] uppercase tracking-[0.18em] text-slate-500 mb-1.5">Drafted reply — casual, lowercase</p>
+          <p class="text-[13.5px] text-slate-300">local-first today, CI runner is next — the hash chain was designed for CI from day one. what's your setup?</p>
+          <div class="mt-2.5 flex gap-2">
+            <button class="bg-green-600 text-[12px] font-semibold rounded px-3.5 py-1.5">Approve & copy</button>
+            <button class="border border-slate-600 text-[12px] text-slate-300 rounded px-3.5 py-1.5">Edit</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="rounded-xl border border-slate-800 bg-slate-900/40 p-4 opacity-90">
+        <div class="flex items-center gap-2.5 text-[12px]">
+          <span class="mono text-orange-500 font-bold">RDT</span>
+          <span class="text-slate-300 font-semibold">u/spaghetticoder</span>
+          <span class="text-slate-500">31 min ago · r/SideProject</span>
+          <span class="ml-auto bg-slate-600 text-white text-[10px] font-bold uppercase tracking-wider rounded px-2 py-0.5">Dunk</span>
+        </div>
+        <p class="mt-2 text-[14px] text-slate-200">so it's a babysitter for claude code</p>
+        <p class="mt-2 text-[12px] text-slate-500 italic">Recommendation: don't reply. Dunks feed on defensiveness — 187 upvotes, let it ride.</p>
+      </div>
+    </section>
+
+    <aside class="space-y-4">
+      <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-4">
+        <p class="text-[11px] uppercase tracking-[0.18em] text-slate-500 mb-3">Last 3 hours</p>
+        <div class="space-y-2 text-[12.5px]">
+          <div class="flex justify-between"><span class="text-slate-400">Questions</span><span class="mono text-sky-400">11</span></div>
+          <div class="flex justify-between"><span class="text-slate-400">Objections</span><span class="mono text-red-400">7</span></div>
+          <div class="flex justify-between"><span class="text-slate-400">Praise</span><span class="mono text-green-400">13</span></div>
+          <div class="flex justify-between"><span class="text-slate-400">Dunks</span><span class="mono text-slate-300">3</span></div>
+        </div>
+      </div>
+      <div class="rounded-xl border border-amber-900/60 bg-amber-950/20 p-4">
+        <p class="text-[11px] uppercase tracking-[0.18em] text-amber-500 mb-2">Pattern detected</p>
+        <p class="text-[13px] text-slate-300">5 of 7 objections are the same: "trust score = LLM grading LLM." Your landing page doesn't explain the hash chain. Fix the hero line now — draft ready.</p>
+        <button class="mt-3 w-full bg-amber-600 text-black text-[12px] font-bold rounded-lg py-2">View suggested hero copy</button>
+      </div>
+    </aside>
+  </main>
+</body>
+</html>

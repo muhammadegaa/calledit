@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ship/Skip Design System — single source of truth (Thariq P7)</title>
+<style>
+  :root {
+    /* ===== TOKENS — all UI code references these, never raw values ===== */
+    --bg: #0a0a0b;            /* app background, near-black */
+    --surface: #18181b;       /* cards */
+    --surface-2: #27272a;     /* inset / secondary buttons */
+    --border: #27272a;
+    --border-strong: #3f3f46;
+    --ink: #fafafa;           /* primary text */
+    --ink-dim: #a1a1aa;       /* secondary text */
+    --ink-faint: #71717a;     /* meta text */
+    --ship: #22c55e;          /* SHIP green — wins, accuracy, up */
+    --ship-deep: #15803d;
+    --skip: #ef4444;          /* misses, down (SKIP button itself is neutral!) */
+    --gold: #f59e0b;          /* streaks, reveals, attention */
+    --bot: #818cf8;           /* the bot's color, only the bot uses it */
+    --radius: 12px;
+    --radius-sm: 8px;
+    --font-sans: -apple-system, 'Segoe UI', sans-serif;
+    --font-mono: ui-monospace, 'SF Mono', Menlo, monospace; /* ALL numbers are mono */
+    --text-xs: 11px; --text-sm: 13px; --text-base: 14.5px; --text-lg: 18px;
+    --text-display: 28px; --text-score: 40px;
+    --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+    --space-5: 24px; --space-6: 32px; --space-7: 48px;
+  }
+  /* ===== RULES =====
+     1. Numbers (scores, %, streaks, timers) are ALWAYS var(--font-mono).
+     2. Green = correctness/SHIP-outcome only. Never decorative green.
+     3. The bot is always --bot indigo; no other element may use it.
+     4. Real launch content (landing screenshots) renders on WHITE cards —
+        the only white in the app — so reality literally glows against the UI.
+     5. Uppercase + letter-spacing 0.18em for section labels, --text-xs.
+     6. One accent per screen: judge=green, reveal=gold, calibration=green.
+     7. No purple gradients, no glassmorphism, no emoji in UI chrome
+        (emoji allowed inside share card grid only: 🟩🟥). */
+  body { background: var(--bg); color: var(--ink); font-family: var(--font-sans); margin: 0; padding: 48px; }
+  .swatches { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0 32px; }
+  .swatch { width: 110px; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); }
+  .swatch > div:first-child { height: 56px; }
+  .swatch p { margin: 0; padding: 8px; font-family: var(--font-mono); font-size: 11px; color: var(--ink-dim); background: var(--surface); }
+  h1 { font-size: 22px; letter-spacing: -0.02em; } h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.18em; color: var(--ink-faint); margin-top: 40px; }
+  .row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-top: 16px; }
+
+  /* ===== COMPONENTS ===== */
+  .btn-ship { background: var(--ship); color: #000; font-weight: 900; font-size: 20px; border: 0; border-radius: var(--radius); padding: 16px 40px; letter-spacing: -0.01em; }
+  .btn-skip { background: var(--surface-2); color: var(--ink-dim); font-weight: 900; font-size: 20px; border: 0; border-radius: var(--radius); padding: 16px 40px; }
+  .btn-secondary { background: transparent; border: 1px solid var(--border-strong); color: var(--ink-dim); border-radius: var(--radius-sm); padding: 8px 16px; font-size: var(--text-sm); }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: var(--space-4); }
+  .launch-card { background: #fff; color: #18181b; border-radius: var(--radius); padding: var(--space-5); max-width: 380px; }
+  .badge { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; border-radius: 4px; padding: 2px 8px; }
+  .badge-hn { background: #ff6600; color: #fff; } .badge-ph { background: #ff6154; color: #fff; }
+  .badge-correct { background: var(--ship); color: #000; } .badge-wrong { background: var(--skip); color: #fff; }
+  .score { font-family: var(--font-mono); font-size: var(--text-score); font-weight: 700; }
+  .streak { font-family: var(--font-mono); color: var(--gold); font-size: var(--text-sm); }
+  .calib-bar { height: 6px; background: var(--surface-2); border-radius: 3px; width: 220px; }
+  .calib-bar > div { height: 6px; border-radius: 3px; background: var(--ship); }
+  .verdict-row { display: flex; justify-content: space-between; gap: 16px; font-size: var(--text-sm); padding: 8px 0; border-bottom: 1px solid var(--border); width: 380px; }
+  .editorial { color: var(--ink-faint); font-style: italic; font-size: 12px; }
+</style>
+</head>
+<body>
+  <h1>Ship/Skip — Design System</h1>
+  <p style="color:var(--ink-dim);font-size:13px;max-width:600px">Scoreboard, not dashboard. Dark room, white cards for reality, mono numbers, one accent per screen. Every UI file must use these tokens — no raw hex in components.</p>
+
+  <h2>Palette</h2>
+  <div class="swatches">
+    <div class="swatch"><div style="background:var(--bg)"></div><p>--bg #0a0a0b</p></div>
+    <div class="swatch"><div style="background:var(--surface)"></div><p>--surface #18181b</p></div>
+    <div class="swatch"><div style="background:var(--ship)"></div><p>--ship #22c55e</p></div>
+    <div class="swatch"><div style="background:var(--skip)"></div><p>--skip #ef4444</p></div>
+    <div class="swatch"><div style="background:var(--gold)"></div><p>--gold #f59e0b</p></div>
+    <div class="swatch"><div style="background:var(--bot)"></div><p>--bot #818cf8</p></div>
+    <div class="swatch"><div style="background:#ffffff"></div><p>reality white</p></div>
+  </div>
+
+  <h2>Call buttons</h2>
+  <div class="row"><button class="btn-ship">SHIP ▲</button><button class="btn-skip">SKIP ▼</button><button class="btn-secondary">share calibration card ↗</button></div>
+
+  <h2>Launch card (reality = white)</h2>
+  <div class="row">
+    <div class="launch-card">
+      <span class="badge badge-hn">Show HN</span>
+      <p style="font-size:18px;font-weight:700;margin:10px 0 4px">Distributed tracing that explains itself</p>
+      <p style="font-size:13px;color:#71717a;margin:0">tracelog.dev · launched 4h ago</p>
+    </div>
+    <div class="card" style="max-width:380px">
+      <div class="verdict-row"><span>Querybase</span><span><span class="badge badge-wrong">✗ you said ship</span></span></div>
+      <div class="verdict-row" style="border:0"><span>Pinch — AI dubbing</span><span class="badge badge-correct">✓ ship · hit #2</span></div>
+      <p class="editorial" style="margin:10px 0 0">"The launch machine got Querybase to #4. You judged the product. Reality judged the marketing."</p>
+    </div>
+  </div>
+
+  <h2>Numbers & calibration</h2>
+  <div class="row">
+    <div><div class="score">68<span style="font-size:18px;color:var(--ink-faint)">%</span></div><div style="font-size:11px;color:var(--ink-faint)">CALIBRATION · 47 CALLS</div></div>
+    <span class="streak">🔥 12-day streak</span>
+    <div><div style="display:flex;justify-content:space-between;font-size:12px;width:220px;margin-bottom:4px"><span style="color:var(--ink-dim)">devtools</span><span style="font-family:var(--font-mono);color:var(--ship)">81%</span></div><div class="calib-bar"><div style="width:81%"></div></div></div>
+  </div>
+</body>
+</html>
