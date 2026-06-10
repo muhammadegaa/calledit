@@ -28,9 +28,17 @@ export type Round<L> = {
 };
 
 export const SOURCE_META = {
-  hn: { badge: "Show HN", color: "#ff6600", shipLabel: "front page in 24h", skipLabel: "sinks quietly" },
-  ph: { badge: "Product Hunt", color: "#ff6154", shipLabel: "top 5 by day's end", skipLabel: "stays off the podium" },
+  hn: { badge: "Show HN", color: "#ff6600", shipLabel: "blows up on HN in 24h", skipLabel: "fades quietly" },
+  ph: { badge: "Product Hunt", color: "#ff6154", shipLabel: "top 5 on PH today", skipLabel: "misses the podium" },
 } as const;
+
+export function botLine(you: Call, bot: Call | undefined): string | null {
+  if (!bot) return null;
+  if (you === "ship" && bot === "ship") return "The bot backed it too. Great minds — or shared delusion.";
+  if (you === "ship" && bot === "skip") return "The bot passed on this. You're braver than the machine.";
+  if (you === "skip" && bot === "ship") return "The bot backed this one. One of you is wrong.";
+  return "The bot passed too. Cold field, says the machine.";
+}
 
 // Asymmetric scoring: ships are rare (~6-20% of a round), so calling one
 // correctly is worth triple a safe skip. Wrong calls score zero, not negative —
