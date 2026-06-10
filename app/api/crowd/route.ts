@@ -8,5 +8,10 @@ export async function GET(req: Request) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
     return NextResponse.json({ error: "bad date" }, { status: 400 });
   }
-  return NextResponse.json(await getCrowd(date));
+  try {
+    return NextResponse.json(await getCrowd(date));
+  } catch (err) {
+    console.error("crowd error", err);
+    return NextResponse.json({ __diag: String(err) });
+  }
 }
