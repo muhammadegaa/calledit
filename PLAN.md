@@ -1,5 +1,15 @@
 # Called It — Hackathon Plan of Record
 
+## RESHAPE (Jun 11, after founder kill-test feedback: "feels stupid, hard to understand")
+Same spine (real launches, reality scores, daily ritual, bot, calibration) — new frame: **product scouting, not quiz**.
+1. **Verbs: BACK / PASS** (was SHIP/SKIP — "ship" read as "they released," ambiguous). Question per card: "Will this blow up in 24h?"
+2. **The Backtest** (fixes dead first session): new players play a RESOLVED past round with INSTANT reveal after each call — full loop in 90s, rules learned by doing — then "graduate" to today's live round ("nobody on earth knows these answers yet"). Uses existing resolved-round data; same JudgeCard + instant-flip mode.
+3. **Curated judgeability**: round builder filters/ranks for "can a generalist form an opinion in 30s" (real landing page, clear tagline; bot rates comprehensibility during its call pass).
+4. **Reveal theater**: one-at-a-time flip, points count-up, bot's call shown AFTER yours with a voice ("I passed on this. You're braver than me."), percentile vs crowd.
+5. **Plain language everywhere**; landing leads with "Think you can spot a winner? Prove it." Scout identity: "eye for devtools: 81%".
+Build order: verbs/copy → backtest mode → reveal theater → curation → percentile. Demo-first; plumbing only if a moment needs it.
+
+
 **Hackathon:** Mind the Product "Everyone Ships Now" (Devpost) · deadline **June 20, 2026, 5 PM GMT**, submit June 19.
 **Product:** **Called It** (calledit.io — to buy) — daily prediction game on REAL live launches. Judge today's Show HN + Product Hunt launches in 30s each (SHIP/SKIP), reality scores you within 24h. Streaks, per-category calibration, share card, and a Claude bot to beat.
 **Canonical spec:** `plan/ship-or-skip-plan.html` (Thariq P1 interactive plan) + `design_system.html` (P7, all UI obeys it). Work order, verification criteria, and non-goals live in the plan file.
