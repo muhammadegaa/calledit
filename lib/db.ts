@@ -28,7 +28,7 @@ export async function getCrowd(
 ): Promise<Record<string, { ships: number; total: number }>> {
   const res = await fetch(
     `${URL}/rest/v1/crowd?round_date=eq.${roundDate}&select=launch_id,ships,total`,
-    { headers, next: { revalidate: 60 } }
+    { headers, cache: "no-store" }
   );
   if (!res.ok) return {};
   const out: Record<string, { ships: number; total: number }> = {};
